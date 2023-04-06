@@ -14,7 +14,7 @@ class BestMoviesSpider(CrawlSpider):
 
     rules = (
         Rule(
-            LinkExtractor(restrict_xpaths=('//td[@class="titleColumn"]/a')),
+            LinkExtractor(restrict_xpaths=('//h3/a')),
             callback='parse_item',
             follow=True,
             process_request="set_user_agent"
